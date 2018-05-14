@@ -32,20 +32,20 @@ function check_os(){
 	fi
 	# Check OS type
 	clear
-	echo -e "正在检测此OS是否被支持..."
-	if [ ! -z "$(cat /etc/issue | grep Debian)" ];then
-		OS='debian'
-		clear
-		echo -e "${ok_font}该脚本支持您的系统。"
-	elif [ ! -z "$(cat /etc/issue | grep Ubuntu)" ];then
-		OS='ubuntu'
-		clear
-		echo -e "${ok_font}该脚本支持您的系统。"
-	else
-		clear
-		echo -e "${error_font}目前暂不支持您使用的操作系统，请切换至Debian/Ubuntu。"
-		exit 1
-	fi
+	#echo -e "正在检测此OS是否被支持..."
+	#if [ ! -z "$(cat /etc/issue | grep Debian)" ];then
+	#	OS='debian'
+	#	clear
+	#	echo -e "${ok_font}该脚本支持您的系统。"
+	#elif [ ! -z "$(cat /etc/issue | grep Ubuntu)" ];then
+	#	OS='ubuntu'
+	#	clear
+	#	echo -e "${ok_font}该脚本支持您的系统。"
+	#else
+	#	clear
+	#	echo -e "${error_font}目前暂不支持您使用的操作系统，请切换至Debian/Ubuntu。"
+	#	exit 1
+	#fi
 }
 
 function check_install_status(){
@@ -132,7 +132,7 @@ function data_processing(){
 		restart_service
 	else
 		prevent_install_check
-		os_update
+		#os_update
 		check_time
 		generate_base_config
 		clear
